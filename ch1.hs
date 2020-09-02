@@ -5,7 +5,7 @@ import Data.Map (Map)
 import qualified Data.Map as Map
 
 counts :: String -> Map Char Int
-counts s = foldr f Map.empty s 
+counts = foldr f Map.empty 
     where g Nothing = Just 1
           g (Just c) = Just $ c+1
           f ch counts = Map.alter g ch counts
